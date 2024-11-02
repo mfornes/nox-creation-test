@@ -2,20 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.carousel-card {
+    @apply flex px-[16px] mx-[-16px] md:mx-0 md:px-0 gap-4 overflow-x-auto whitespace-nowrap flex-nowrap md:flex-wrap md:justify-between md:gap-12;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.menu-nav {
+    @apply gap-4 hidden md:flex;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.menu-tab-content {
+    @apply font-roboto text-[16px] leading-[22.4px] md:text-[18px] md:text-[#475569] font-normal md:leading-[28.8px];
+}
+
+.header-container {
+    @apply top-0 sticky z-50 h-[67px] md:h-[96px] items-center w-full flex justify-between p-[16px] border-b-[1px] border-[#E2E8F0] border-solid bg-white;
+}
+
+.header-logo {
+    @apply content-center text-[#0F172A] text-[32px] font-bold leading-[35.2px] text-left font-roboto;
+}
+
+.header-buttons {
+    @apply hidden md:flex gap-4 items-center;
+}
+
+.menu-burger {
+    @apply content-center cursor-pointer md:hidden;
+}
+
+.no-before::before {
+    content: none !important;
+}
+
+.hero {
+    background-color: #581C87BF;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(88, 28, 135, 0.75), rgba(88, 28, 135, 0.75)), url("../../public/img/section.jpeg");
+    background-position: center;
+    background-size: cover;
+    color: #ffffff;
 }
